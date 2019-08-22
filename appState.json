@@ -1,0 +1,85 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "3a259490-8b89-43d4-9e13-eb0445a4ebe3": {
+        "id": "3a259490-8b89-43d4-9e13-eb0445a4ebe3",
+        "parent": null,
+        "name": "TestFileconflict",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "94319e8a-41e2-48c5-bea9-fbe72ecd65b5"
+        ],
+        "isRemovable": false,
+        "filePath": "TestFileconflict"
+      },
+      "94319e8a-41e2-48c5-bea9-fbe72ecd65b5": {
+        "id": "94319e8a-41e2-48c5-bea9-fbe72ecd65b5",
+        "parent": "3a259490-8b89-43d4-9e13-eb0445a4ebe3",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "TestFileconflict/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [],
+        "testCases": {
+          "ed4a37bb-3d04-4b8d-a236-d9cfd0eacd75": {
+            "id": "ed4a37bb-3d04-4b8d-a236-d9cfd0eacd75",
+            "functionId": "94319e8a-41e2-48c5-bea9-fbe72ecd65b5",
+            "name": "My First Test Case",
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+          }
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "3a259490-8b89-43d4-9e13-eb0445a4ebe3",
+    "openFiles": [
+      "94319e8a-41e2-48c5-bea9-fbe72ecd65b5"
+    ],
+    "currentFileId": "94319e8a-41e2-48c5-bea9-fbe72ecd65b5",
+    "resources": {},
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "TestFileconflict",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1566450507000
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "TestFileconflict",
+      "url": "https://github.com/Kumudikatest/TestFileconflict"
+    }
+  }
+}
