@@ -36,7 +36,7 @@
             "id": "ed4a37bb-3d04-4b8d-a236-d9cfd0eacd75",
             "functionId": "94319e8a-41e2-48c5-bea9-fbe72ecd65b5",
             "name": "My First Test Case",
-            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key4\": \"value4\"\n}"
           }
         }
       }
