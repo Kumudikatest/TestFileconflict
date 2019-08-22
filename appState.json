@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "TestFileconflict/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ses = new AWS.SES();\n\nexports.handler = function (event, context, callback) {\n    ses.sendEmail({\n        Destination: {\n            ToAddresses: ['kumudika@adroitlogic.com'],\n            CcAddresses: [],\n            BccAddresses: []\n        },\n        Message: {\n            Body: {\n                Text: {\n                    Data: `test`\n                }\n            },\n            Subject: {\n                Data: 'Test'\n            }\n        },\n        Source: 'achal.rvce@gmail.com',\n    }, function (err, data) {\n        if (err) console.log(err, err.stack); // an error occurred\n        else console.log(data);           // successful response\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -36,7 +36,7 @@
             "id": "ed4a37bb-3d04-4b8d-a236-d9cfd0eacd75",
             "functionId": "94319e8a-41e2-48c5-bea9-fbe72ecd65b5",
             "name": "My First Test Case",
-            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key4\": \"value4\"\n}"
+            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
           }
         }
       }
@@ -47,7 +47,26 @@
       "94319e8a-41e2-48c5-bea9-fbe72ecd65b5"
     ],
     "currentFileId": "94319e8a-41e2-48c5-bea9-fbe72ecd65b5",
-    "resources": {},
+    "resources": {
+      "ses-achal.rvce@gmail.com": {
+        "name": "ses-achal.rvce@gmail.com",
+        "type": "SES",
+        "config": {
+          "selectedIdentity": "achal.rvce@gmail.com",
+          "projectRegion": "us-east-1",
+          "params": {
+            "to": "kumudika@adroitlogic.com",
+            "cc": "",
+            "bcc": "",
+            "subject": "Test",
+            "body": {
+              "text": "test",
+              "html": ""
+            }
+          }
+        }
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": {}
@@ -63,7 +82,15 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
     }
   },
   "PROJECT_META": {
@@ -73,7 +100,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1566450507000
+    "lastSave": 1566450829822
   },
   "VCS_STATE": {
     "provider": "GitHub",
